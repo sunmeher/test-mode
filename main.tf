@@ -3,8 +3,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "nat-gateway-example-rg"
-  location = "West Europe"
+  name     = var.resource_group_name
+  location = var.region
 }
 
 resource "azurerm_public_ip" "example" {
@@ -23,6 +23,7 @@ resource "azurerm_public_ip_prefix" "example" {
   prefix_length       = 30
   zones               = ["1"]
 }
+
 
 
 
